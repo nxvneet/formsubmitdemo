@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Career Opportunities</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #00205b;
+            padding: 15px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: #00205b;
+            color: #fff;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background-color: #fff;
+            border-radius: 50% 50% 0 0;
+        }
+        
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text {
+            width: 50%;
+        }
+        
+        .hero-text h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .hero-text h2 {
+            font-size: 22px;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+        
+        .hero-form {
+            width: 380px;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-form h3 {
+            background-color: #00205b;
+            color: #fff;
+            margin: -25px -25px 20px -25px;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .hero-form h3 span {
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        
+        /* Requirements Section */
+        .requirements {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .requirements h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: #00205b;
+        }
+        
+        .req-list {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .req-item {
+            display: flex;
+            height: 85px;
+            align-items: center;
+            background-color: #fff;
+            padding: 12px 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .req-icon {
+            background-color: #e6f0ff;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: #00205b;
+            font-size: 16px;
+        }
+        
+        .req-text {
+            flex: 1;
+            line-height: normal;
+        }
+        
+        .note {
+            text-align: center;
+            font-style: italic;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        
+        /* Form Section */
+        .contact {
+            padding: 80px 0;
+        }
+        
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: #00205b;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group input[type="email"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-option input {
+            margin-right: 5px;
+        }
+        
+        .file-upload {
+            border: 1px dashed #ddd;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .file-upload label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .submit-btn {
+            background-color: #00205b;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #001845;
+        }
+        
+        .submit-btn:disabled {
+            background-color: #b3b3b3;
+            cursor: not-allowed;
+        }
+        
+        .file-feedback {
+            font-size: 12px;
+            margin-top: 5px;
+            color: #ff3333;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #00205b;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-text, .hero-form {
+                width: 100%;
+            }
+            
+            .hero-text {
+                margin-bottom: 30px;
+            }
+            
+            .req-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Driver Careers</div>
+            <div class="contact-info">
+                <a href="tel:+97412345678">+974 1234 5678</a>
+                <a href="#">Apply Now</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Looking for a job that pays well and still lets you enjoy life off the road?</h1>
+                <h2>Your driving career should support your lifestyle—not take over it.</h2>
+            </div>
+            <div class="hero-form">
+                <h3>ENQUIRY FORM<span>PLEASE FILL OUR FORM TO CONTACT US</span></h3>
+                <form id="hero-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="contact" name="contact" placeholder="Contact Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Do you have a driving license?</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="license-yes" name="license" value="yes" required>
+                                <label for="license-yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="license-no" name="license" value="no" required>
+                                <label for="license-no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group license-number-group" style="display: none;">
+                        <input type="text" id="license-number" name="license-number" placeholder="Driving License Number">
+                    </div>
+                    <div class="form-group">
+                        <div class="file-upload">
+                            <label for="cv">Upload Your CV (PDF or Word, max 5MB)</label>
+                            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+                            <p class="file-feedback"></p>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn" disabled>SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Requirements Section -->
+    <section class="requirements">
+        <div class="container">
+            <h2>We Require</h2>
+            <ul class="req-list">
+                <li class="req-item">
+                    <div class="req-icon">✓</div>
+                    <div class="req-text">No DUI or DWI within past five years</div>
+                </li>
+                <li class="req-item">
+                    <div class="req-icon">✓</div>
+                    <div class="req-text">Strong English communication skills</div>
+                </li>
+                <li class="req-item">
+                    <div class="req-icon">✓</div>
+                    <div class="req-text">Qatar Driving License Category 5</div>
+                </li>
+                <li class="req-item">
+                    <div class="req-icon">✓</div>
+                    <div class="req-text">A valid residency permit, with a minimum validity of 3 to 6 months</div>
+                </li>
+                <li class="req-item">
+                    <div class="req-icon">✓</div>
+                    <div class="req-text">Two year verifiable over-the-road experience</div>
+                </li>
+                <li class="req-item">
+                    <div class="req-icon">✓</div>
+                    <div class="req-text">At least 30 years old</div>
+                </li>
+                <li class="req-item">
+                    <div class="req-icon">✓</div>
+                    <div class="req-text">Clean motor vehicle report</div>
+                </li>
+                <li class="req-item">
+                    <div class="req-icon">✓</div>
+                    <div class="req-text">No history of diabetes, high blood pressure, or other disqualifying medical conditions</div>
+                </li>
+            </ul>
+            <p class="note">Selected candidates will undergo practical driving tests and medical examinations as part of the selection process</p>
+        </div>
+    </section>
+    
+    <!-- Contact Form Section (Full) -->
+    <section class="contact">
+        <div class="container">
+            <h2>Apply Today</h2>
+            <div class="form-container">
+                <form id="full-form">
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Contact Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Do you have a driving license?</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="has-license-yes" name="has-license" value="yes" required>
+                                <label for="has-license-yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="has-license-no" name="has-license" value="no" required>
+                                <label for="has-license-no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group full-license-number-group" style="display: none;">
+                        <label for="license-no">Driving License Number</label>
+                        <input type="text" id="license-no" name="license-no">
+                    </div>
+                    <div class="form-group">
+                        <div class="file-upload">
+                            <label for="resume">Upload Your CV (PDF or Word, max 5MB)</label>
+                            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+                            <p class="file-feedback"></p>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn" disabled>Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Driver Careers. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form validation and conditional fields
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hero form
+            const heroForm = document.getElementById('hero-form');
+            const heroLicenseYes = document.getElementById('license-yes');
+            const heroLicenseNo = document.getElementById('license-no');
+            const heroLicenseNumberGroup = document.querySelector('.license-number-group');
+            const heroLicenseNumber = document.getElementById('license-number');
+            const heroName = document.getElementById('name');
+            const heroContact = document.getElementById('contact');
+            const heroCV = document.getElementById('cv');
+            const heroSubmitBtn = heroForm.querySelector('.submit-btn');
+            const heroFileFeedback = heroForm.querySelector('.file-feedback');
+            
+            // Full form
+            const fullForm = document.getElementById('full-form');
+            const fullLicenseYes = document.getElementById('has-license-yes');
+            const fullLicenseNo = document.getElementById('has-license-no');
+            const fullLicenseNumberGroup = document.querySelector('.full-license-number-group');
+            const fullLicenseNumber = document.getElementById('license-no');
+            const fullName = document.getElementById('full-name');
+            const fullPhone = document.getElementById('phone');
+            const fullEmail = document.getElementById('email');
+            const fullCV = document.getElementById('resume');
+            const fullSubmitBtn = fullForm.querySelector('.submit-btn');
+            const fullFileFeedback = fullForm.querySelector('.file-feedback');
+            
+            // Function to validate max file size (5MB)
+            function validateFileSize(file) {
+                const maxSize = 5 * 1024 * 1024; // 5MB
+                return file.size <= maxSize;
+            }
+            
+            // Function to validate file type
+            function validateFileType(file) {
+                const validTypes = ['.pdf', '.doc', '.docx'];
+                const extension = '.' + file.name.split('.').pop().toLowerCase();
+                return validTypes.includes(extension);
+            }
+            
+            // Show/hide license number field based on radio selection - Hero form
+            heroLicenseYes.addEventListener('change', function() {
+                if (this.checked) {
+                    heroLicenseNumberGroup.style.display = 'block';
+                    validateHeroForm();
+                }
+            });
+            
+            heroLicenseNo.addEventListener('change', function() {
+                if (this.checked) {
+                    heroLicenseNumberGroup.style.display = 'none';
+                    heroLicenseNumber.value = '';
+                    validateHeroForm();
+                }
+            });
+            
+            // Show/hide license number field based on radio selection - Full form
+            fullLicenseYes.addEventListener('change', function() {
+                if (this.checked) {
+                    fullLicenseNumberGroup.style.display = 'block';
+                    validateFullForm();
+                }
+            });
+            
+            fullLicenseNo.addEventListener('change', function() {
+                if (this.checked) {
+                    fullLicenseNumberGroup.style.display = 'none';
+                    fullLicenseNumber.value = '';
+                    validateFullForm();
+                }
+            });
+            
+            // Validate hero form
+            function validateHeroForm() {
+                const nameValid = heroName.value.trim() !== '';
+                const contactValid = heroContact.value.trim() !== '';
+                const licenseValid = heroLicenseYes.checked || heroLicenseNo.checked;
+                const licenseNumberValid = !heroLicenseYes.checked || (heroLicenseYes.checked && heroLicenseNumber.value.trim() !== '');
+                
+                // File validation
+                let fileValid = true;
+                if (heroCV.files.length > 0) {
+                    const file = heroCV.files[0];
+                    if (!validateFileSize(file)) {
+                        heroFileFeedback.textContent = 'File size exceeds 5MB limit';
+                        fileValid = false;
+                    } else if (!validateFileType(file)) {
+                        heroFileFeedback.textContent = 'Only PDF or Word documents allowed';
+                        fileValid = false;
+                    } else {
+                        heroFileFeedback.textContent = '';
+                    }
+                }
+                
+                // Enable/disable submit button
+                heroSubmitBtn.disabled = !(nameValid && contactValid && licenseValid && licenseNumberValid && fileValid);
+            }
+            
+            // Validate full form
+            function validateFullForm() {
+                const nameValid = fullName.value.trim() !== '';
+                const phoneValid = fullPhone.value.trim() !== '';
+                const emailValid = fullEmail.value.trim() !== '';
+                const licenseValid = fullLicenseYes.checked || fullLicenseNo.checked;
+                const licenseNumberValid = !fullLicenseYes.checked || (fullLicenseYes.checked && fullLicenseNumber.value.trim() !== '');
+                
+                // File validation
+                let fileValid = true;
+                if (fullCV.files.length > 0) {
+                    const file = fullCV.files[0];
+                    if (!validateFileSize(file)) {
+                        fullFileFeedback.textContent = 'File size exceeds 5MB limit';
+                        fileValid = false;
+                    } else if (!validateFileType(file)) {
+                        fullFileFeedback.textContent = 'Only PDF or Word documents allowed';
+                        fileValid = false;
+                    } else {
+                        fullFileFeedback.textContent = '';
+                    }
+                }
+                
+                // Enable/disable submit button
+                fullSubmitBtn.disabled = !(nameValid && phoneValid && emailValid && licenseValid && licenseNumberValid && fileValid);
+            }
+            
+            // Add event listeners for input fields - Hero form
+            heroName.addEventListener('input', validateHeroForm);
+            heroContact.addEventListener('input', validateHeroForm);
+            heroLicenseNumber.addEventListener('input', validateHeroForm);
+            heroCV.addEventListener('change', validateHeroForm);
+            
+            // Add event listeners for input fields - Full form
+            fullName.addEventListener('input', validateFullForm);
+            fullPhone.addEventListener('input', validateFullForm);
+            fullEmail.addEventListener('input', validateFullForm);
+            fullLicenseNumber.addEventListener('input', validateFullForm);
+            fullCV.addEventListener('change', validateFullForm);
+            
+            // Form submission
+            heroForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Form submitted successfully!');
+                // You can add AJAX form submission here
+            });
+            
+            fullForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Form submitted successfully!');
+                // You can add AJAX form submission here
+            });
+        });
+    </script>
+</body>
+</html>
